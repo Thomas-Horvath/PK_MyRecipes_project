@@ -132,7 +132,6 @@ function render(data) {
     //console.log(recipes);
 };
 
-render(RECIPES);
 
 
 // ----------------------------------------------------------------
@@ -144,8 +143,12 @@ function inputEventHandler(e) {
             recipe.name.toLowerCase().includes(filterValue)  || recipe.ingredients.join(' ').toLowerCase().includes(filterValue)
         );
     });
-
+    
     render(filterData);
 };
 
-INPUT.addEventListener('input', inputEventHandler)
+INPUT.addEventListener('input', inputEventHandler);
+FORM.addEventListener('submit', e => e.preventDefault());
+
+
+render(RECIPES);
